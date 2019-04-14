@@ -21,6 +21,12 @@
             <div class="mt3">
                 <label class="db fw6 lh-copy f6" for="password">Password</label>
                 <input class="pa2 input-reset ba w-100" type="password" name="password" id="password">
+
+                Password: <input type="password" name="pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                 title="Password must contain atleast 1 alphabet, 1 number & 1 special character">
+                <input type="submit">
+
+
                 <p class="f6 red mt1" th:if="${errors != null and errors.get('password') != null}"
                    th:text="${errors.get('password')}"></p>
                 <p class="f6 red mt1" th:if="${passworderror != null}" th:text="${passworderror}"></p>
